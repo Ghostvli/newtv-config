@@ -26,7 +26,7 @@ jobs:
       - name: 解密在线接口并合并 ZTE 条目
         run: |
           python update_config.py \
-            --url "http://www.xn--sss604efuw.cc/tv" \
+            --url "http://www.饭太硬.cc/tv" \
             --output NewTV.json \
             --zte zte.json
 

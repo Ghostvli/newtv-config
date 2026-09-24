@@ -41,6 +41,14 @@ ALLOWED_ROOTS = [
 ]
 
 
+def _to_ascii_host(host: str) -> str:
+    """非 ASCII（如中文）域名转 punycode ASCII 形式：Linux 的 glibc 解析器不支持 IDN。"""
+    try:
+        return host if host.isascii() else host.encode("idna").decode("ascii")
+    except UnicodeError:
+        return host
+
+
 def _host_allowed(host: str) -> bool:
     """host 字符串级校验：非 localhost/.local；字面 IP 必须是公网地址。"""
     low = host.lower().rstrip(".")
@@ -54,6 +62,7 @@ def _host_allowed(host: str) -> bool:
 
 def _resolve_global(host: str, port: int) -> str:
     """DNS 解析并要求全部结果为公网地址，返回钉住的 IP。"""
+    host = _to_ascii_host(host)
     infos = socket.getaddrinfo(host, port, type=socket.SOCK_STREAM)
     addrs = [ipaddress.ip_address(i[4][0]) for i in infos]
     if not addrs or not all(a.is_global for a in addrs):
@@ -61,16 +70,19 @@ def _resolve_global(host: str, port: int) -> str:
     return str(addrs[0])
 
 
-def check_url(url: str) -> None:
-    """请求前校验：仅 http/https，host 非本地/保留地址。"""
+def check_url(url: str) -> str:
+    """请求前校验：仅 http/https，host 非本地/保留地址；返回 host 转为 punycode 后的 URL。"""
     parsed = urlparse(url)
     if parsed.scheme not in ("http", "https"):
         raise ValueError(f"仅允许 http/https，实际 scheme: {parsed.scheme!r}")
     host = parsed.hostname
     if not host:
         raise ValueError("URL 缺少 host")
+    host = _to_ascii_host(host)
     if not _host_allowed(host):
         raise ValueError(f"拒绝本地/保留地址: {host}")
+    netloc = host if parsed.port is None else f"{host}:{parsed.port}"
+    return parsed._replace(netloc=netloc).geturl()
 
 
 # ---- 钉住已校验 IP 的连接（校验与连接用同一解析结果，防 DNS rebinding） ----
@@ -90,12 +102,12 @@ class _PinnedHTTPSConnection(http.client.HTTPSConnection):
 
 class _SafeRedirectHandler(urllib.request.HTTPRedirectHandler):
     def redirect_request(self, req, fp, code, msg, headers, newurl):
-        check_url(newurl)  # 每一跳重定向都重新校验
+        newurl = check_url(newurl)  # 每一跳重定向都重新校验（并规范化为 punycode）
         return super().redirect_request(req, fp, code, msg, headers, newurl)
 
 
 def fetch(url: str) -> bytes:
-    check_url(url)
+    url = check_url(url)
     opener = urllib.request.OpenerDirector()
     opener.add_handler(urllib.request.HTTPErrorProcessor())
     opener.add_handler(urllib.request.HTTPDefaultErrorHandler())
