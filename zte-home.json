@@ -1,0 +1,24 @@
+{
+    "sites": [
+        {
+            "key": "csp_ZTESpider",
+            "name": "老家",
+            "type": 3,
+            "api": "csp_ZTESpider",
+            "ext": "1:b2a947fc9da110dbfdb2f2e607ce2159c6149640204cbbbd668fb478f8ad4490163bade5e854f918715f73704a44c6abc09e41650d7cfd2eb5f2a238b0857263ff3c838b1d2f2e28d14c75c8279ac75a82322470c700dd60",
+            "searchable": 1
+        }
+    ],
+    "lives": [
+        {
+            "name": "老家IPTV",
+            "type": 0,
+            "api": "csp_ZTESpider",
+            "url": "",
+            "ext": "1:b2a947fc9da110dbfdb2f2e607ce2159c6149640204cbbbd668fb478f8ad4490163bade5e854f918715f73704a44c6abc09e41650d7cfd2eb5f2a238b0857263ff3c838b1d2f2e28d14c75c8279ac75a82322470c700dd60",
+            "playerType": 2,
+            "logo": "https://gh-proxy.org/https://raw.githubusercontent.com/sggc/SDU-IPTV-PRO/main/logo/{name}.png"
+        }
+    ],
+    "remove_site_keys": []
+}

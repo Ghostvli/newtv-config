@@ -25,16 +25,22 @@ jobs:
 
       - name: 解密在线接口并合并 ZTE 条目
         run: |
+          # NewTV.json：家里账号（和园 + 山东联通）
           python update_config.py \
             --url "http://www.饭太硬.cc/tv" \
             --output NewTV.json \
             --zte zte.json
+          # home.json：老家账号（老家点播 + 老家IPTV直播），与家里账号分开、互不互踢
+          python update_config.py \
+            --url "http://www.饭太硬.cc/tv" \
+            --output home.json \
+            --zte zte-home.json
 
       - name: 提交并推送（有变化时）
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add NewTV.json
+          git add NewTV.json home.json
           if git diff --cached --quiet; then
             echo "配置无变化，跳过提交"
           else
@@ -46,4 +52,6 @@ jobs:
         if: success()
         run: |
           curl -s -X POST "https://purge.jsdelivr.net/gh/Ghostvli/newtv-config@main/NewTV.json" \
+            -H "Content-Type: application/json" || true
+          curl -s -X POST "https://purge.jsdelivr.net/gh/Ghostvli/newtv-config@main/home.json" \
             -H "Content-Type: application/json" || true

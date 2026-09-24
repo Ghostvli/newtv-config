@@ -7,9 +7,13 @@ NewTV 电视端接口配置仓库，由 GitHub Actions 定时从在线接口自�
 配置地址（二选一，优先 CDN）：
 
 ```
-https://cdn.jsdelivr.net/gh/Ghostvli/newtv-config@main/NewTV.json
+https://cdn.jsdelivr.net/gh/Ghostvli/newtv-config@main/NewTV.json     # 家里账号（和园 + 山东联通）
+https://cdn.jsdelivr.net/gh/Ghostvli/newtv-config@main/home.json      # 老家账号（老家点播 + 老家IPTV直播）
 https://raw.githubusercontent.com/Ghostvli/newtv-config/main/NewTV.json
+https://raw.githubusercontent.com/Ghostvli/newtv-config/main/home.json
 ```
+
+两个接口用不同 IPTV 账号，同时使用互不互踢（平台单点在线只限同账号）。
 
 ## 自动更新流程
 
@@ -17,8 +21,10 @@ https://raw.githubusercontent.com/Ghostvli/newtv-config/main/NewTV.json
 
 1. 下载在线接口 `http://www.饭太硬.cc/tv`（伪装成图片的文件；中文域名脚本会自动转 punycode）
 2. 解密：取 JPEG 结束标记 `FF D9` 之后的数据 → 去掉 `标记**` 前缀 → Base64 解码 → 配置 JSON
-3. 合并 `zte.json`：剔除 `remove_site_keys` 里的站点（移动），前置 ZTE 站点（和园）与直播源（山东联通）
-4. 与现有 `NewTV.json` 语义对比，有实质变化才提交推送，并刷新 jsDelivr 缓存
+3. 生成两份配置（格式一致，仅 ZTE 条目不同）：
+   - `NewTV.json`：合并 `zte.json`（剔除移动站点，前置和园 + 山东联通）
+   - `home.json`：合并 `zte-home.json`（前置老家点播 + 老家IPTV直播）
+4. 与现有文件语义对比，有实质变化才提交推送，并刷新 jsDelivr 缓存
 
 ## 手动更新
 
