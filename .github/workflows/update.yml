@@ -1,0 +1,49 @@
+name: Update NewTV config
+
+on:
+  schedule:
+    # UTC 1:00 / 13:00 = 北京时间 9:00 / 21:00，每天两次
+    - cron: "0 1,13 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-config
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 解密在线接口并合并 ZTE 条目
+        run: |
+          python update_config.py \
+            --url "http://www.xn--sss604efuw.cc/tv" \
+            --output NewTV.json \
+            --zte zte.json
+
+      - name: 提交并推送（有变化时）
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add NewTV.json
+          if git diff --cached --quiet; then
+            echo "配置无变化，跳过提交"
+          else
+            git commit -m "auto: 更新接口配置 $(date -u -d '+8 hours' '+%Y-%m-%d %H:%M') CST"
+            git push
+          fi
+
+      - name: 刷新 jsDelivr CDN 缓存
+        if: success()
+        run: |
+          curl -s -X POST "https://purge.jsdelivr.net/gh/Ghostvli/newtv-config@main/NewTV.json" \
+            -H "Content-Type: application/json" || true

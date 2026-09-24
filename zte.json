@@ -1,0 +1,27 @@
+{
+    "sites": [
+        {
+            "key": "csp_ZTESpider",
+            "name": "和园",
+            "type": 3,
+            "api": "csp_ZTESpider",
+            "ext": "1:43511272fed430e7d733afc054e3b60277a92b5288412aad26e0ae10ed8be127e73eb501b3b93edfaa462314562c41b7ed7c9fefb77ab9c1969ebedf81ecfc70ee7e0cc707fe89ebb5b6621f522e9babb9b490b28996905ffb0f52e55111e3a8872f2b5a2ff81f01679542a961b8015c03a04fcce64247275d5cf586273870e795f53a43a44e3f0d7de4b4b122868c3b",
+            "searchable": 1
+        }
+    ],
+    "lives": [
+        {
+            "name": "山东联通",
+            "type": 0,
+            "api": "csp_ZTESpider",
+            "url": "",
+            "ext": "1:43511272fed430e7d733afc054e3b60277a92b5288412aad26e0ae10ed8be127e73eb501b3b93edfaa462314562c41b7ed7c9fefb77ab9c1969ebedf81ecfc70ee7e0cc707fe89ebb5b6621f522e9babb9b490b28996905ffb0f52e55111e3a8872f2b5a2ff81f01679542a961b8015c03a04fcce64247275d5cf586273870e795f53a43a44e3f0d7de4b4b122868c3b",
+            "playerType": 2,
+            "logo": "https://gh-proxy.org/https://raw.githubusercontent.com/sggc/SDU-IPTV-PRO/main/logo/{name}.png"
+        }
+    ],
+    "remove_site_keys": [
+        "csp_SDCMCCSpider",
+        "csp_SDCMCCJNSpider"
+    ]
+}
