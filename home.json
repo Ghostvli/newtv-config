@@ -1,9 +1,9 @@
-//      >>> 自动更新于：2026-09-30 02:23:06 <<<
+//      >>> 自动更新于：2026-10-04 14:31:26 <<<
 //     由 GitHub Actions 定时解密生成，请勿手动修改本文件
 
 //     当前接口：http://www.饭太硬.cc/tv
 {
-    "spider": "https://xiuxiu-pro-new.meitudata.com/posters/2b32255aa9e7a9fd1913c1d0019e2be4.jpg;md5;2cc088afa757ba8bafffcfbab4b73ccc",
+    "spider": "https://xiuxiu-pro-new.meitudata.com/posters/df6450a1cc03f3139b659338e9f15278.jpg;md5;f782cdee81118405176fd260be9ca5cd",
     "wallpaper": "https://动态壁纸.饭.eu.org/",
     "sites": [
         {
@@ -54,7 +54,7 @@
         },
         {
             "key": "YGP",
-            "name": "🚀叨观荐影┃预告片",
+            "name": "🚀荐影┃预告片",
             "type": 3,
             "api": "csp_YGPGuard",
             "searchable": 0,
@@ -63,7 +63,7 @@
         },
         {
             "key": "MTV1",
-            "name": "🎙️易听音乐┃带歌词",
+            "name": "🎙️易听┃音乐",
             "type": 3,
             "api": "csp_MusicGuard",
             "style": {
@@ -249,6 +249,21 @@
             "quickSearch": 1,
             "changeable": 0,
             "ext": "https://www.xb6v.com/"
+        },
+        {
+            "key": "AiDj",
+            "name": "❤️AI┃短漫剧",
+            "type": 3,
+            "api": "csp_AiDjGuard",
+            "ext": {
+                "type": "video",
+                "name": "短剧",
+                "DanMu": false
+            },
+            "indexs": 0,
+            "quickSearch": 1,
+            "searchable": 1,
+            "changeable": 0
         },
         {
             "key": "咕咕",
@@ -455,7 +470,7 @@
         },
         {
             "key": "抠搜",
-            "name": "🍄抠抠┃搜搜",
+            "name": "🌶️抠抠┃搜搜",
             "type": 3,
             "api": "csp_KkSsGuard",
             "searchable": 1,
