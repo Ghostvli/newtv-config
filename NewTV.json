@@ -1,9 +1,9 @@
-//      >>> 自动更新于：2026-10-08 03:08:23 <<<
+//      >>> 自动更新于：2026-10-11 01:32:31 <<<
 //     由 GitHub Actions 定时解密生成，请勿手动修改本文件
 
 //     当前接口：http://www.饭太硬.cc/tv
 {
-    "spider": "https://xiuxiu-pro-new.meitudata.com/posters/ccb76b63192f6af9561e807e1d38929d.jpg;md5;2386c62eb5f0b84dd53e27ad0fe9db49",
+    "spider": "https://xiuxiu-pro-new.meitudata.com/posters/bf8f9691ed0323ead5dc85d44fb9a9fd.jpg;md5;26bd32d068f360c1ec9cca0c636fd4db",
     "wallpaper": "https://动态壁纸.饭.eu.org/",
     "sites": [
         {
@@ -655,16 +655,16 @@
             "logo": "https://gh-proxy.org/https://raw.githubusercontent.com/sggc/SDU-IPTV-PRO/main/logo/{name}.png"
         },
         {
-            "name": "Kimentanm",
-            "type": 0,
-            "url": "https://gh.927223.xyz/https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u",
-            "playerType": 2
-        },
-        {
             "name": "综合直播",
             "type": 0,
             "url": "http://193.123.86.190:14888/TV/iptv.php",
             "ua": "bingcha/1.1 (mianfeifenxiang)",
+            "playerType": 2
+        },
+        {
+            "name": "Kimentanm",
+            "type": 0,
+            "url": "https://ghproxy.net/https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u",
             "playerType": 2
         },
         {
