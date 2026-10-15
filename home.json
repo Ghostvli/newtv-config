@@ -1,9 +1,9 @@
-//      >>> 自动更新于：2026-10-15 13:24:42 <<<
+//      >>> 自动更新于：2026-10-16 01:30:13 <<<
 //     由 GitHub Actions 定时解密生成，请勿手动修改本文件
 
 //     当前接口：http://www.饭太硬.cc/tv
 {
-    "spider": "https://xiuxiu-pro-new.meitudata.com/posters/203ad3dd8c5d2a606af70c361ca6d358.jpg;md5;25f4460aed52987f02865f02a1e83aa8",
+    "spider": "https://xiuxiu-pro-new.meitudata.com/posters/3c60a3e44d582b5a74fdcab19a150ad5.jpg;md5;aa8d37525617af470b3b8dfc91db8669",
     "wallpaper": "https://动态壁纸.饭.eu.org/",
     "sites": [
         {
@@ -16,7 +16,7 @@
         },
         {
             "key": "点我切源",
-            "name": "豆豆┃片单",
+            "name": "豆豆┃片单 <修复漫剧、海绵>",
             "type": 3,
             "api": "csp_DouDouGuard",
             "indexs": 1,
@@ -114,6 +114,17 @@
             "api": "csp_NewCzGuard",
             "timeout": 10,
             "playerType": 2,
+            "searchable": 1,
+            "quickSearch": 1,
+            "changeable": 1
+        },
+        {
+            "key": "海绵",
+            "name": "🐬海绵┃不卡",
+            "type": 3,
+            "api": "csp_HmysGuard",
+            "timeout": 10,
+            "playerType": "2",
             "searchable": 1,
             "quickSearch": 1,
             "changeable": 1
@@ -258,7 +269,7 @@
             "ext": {
                 "type": "video",
                 "name": "短剧",
-                "DanMu": false
+                "danMu": false
             },
             "indexs": 0,
             "quickSearch": 1,
