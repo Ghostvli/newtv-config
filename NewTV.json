@@ -1,9 +1,9 @@
-//      >>> 自动更新于：2026-10-22 13:36:51 <<<
+//      >>> 自动更新于：2026-10-24 13:13:24 <<<
 //     由 GitHub Actions 定时解密生成，请勿手动修改本文件
 
 //     当前接口：http://www.饭太硬.cc/tv
 {
-    "spider": "https://xiuxiu-pro-new.meitudata.com/posters/23a0210a87314011a88b149d6f04722e.jpg;md5;654fb7dcb0aeaaea7dba0e662395f38e",
+    "spider": "https://xiuxiu-pro-new.meitudata.com/posters/e05f19091b8106dd81c34becbae3ad1c.jpg;md5;b55978c4fe6d12e2fea9075f17c8a67a",
     "wallpaper": "https://动态壁纸.饭.eu.org/",
     "sites": [
         {
@@ -16,7 +16,7 @@
         },
         {
             "key": "点我切源",
-            "name": "豆豆┃片单 <修复所有>",
+            "name": "豆豆┃片单",
             "type": 3,
             "api": "csp_DouDouGuard",
             "indexs": 1,
