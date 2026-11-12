@@ -17,7 +17,7 @@ https://raw.githubusercontent.com/Ghostvli/newtv-config/main/home.json
 
 ## 自动更新流程
 
-每天北京时间 9:00 / 21:00（GitHub Actions 定时）自动执行：
+每 4 小时一轮（GitHub Actions 定时；Actions 排队有延迟，实际间隔约 4~10 小时）自动执行：
 
 1. 下载在线接口 `http://www.饭太硬.cc/tv`（伪装成图片的文件；中文域名脚本会自动转 punycode）
 2. 解密：取 JPEG 结束标记 `FF D9` 之后的数据 → 去掉 `标记**` 前缀 → Base64 解码 → 配置 JSON
