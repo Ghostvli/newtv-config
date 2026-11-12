@@ -2,8 +2,9 @@ name: Update NewTV config
 
 on:
   schedule:
-    # UTC 1:00 / 13:00 = 北京时间 9:00 / 21:00，每天两次
-    - cron: "0 1,13 * * *"
+    # 每 4 小时一次（UTC 0/4/8/12/16/20 = 北京 8/12/16/20/0/4 点）
+    # Actions 定时任务排队常有 1~7 小时延迟，拉高频率对冲延迟，保证日内容新鲜度
+    - cron: "0 */4 * * *"
   workflow_dispatch: {}
 
 permissions:
