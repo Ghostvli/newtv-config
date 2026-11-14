@@ -1,9 +1,9 @@
-//      >>> 自动更新于：2026-11-14 08:38:56 <<<
+//      >>> 自动更新于：2026-11-15 07:36:18 <<<
 //     由 GitHub Actions 定时解密生成，请勿手动修改本文件
 
 //     当前接口：http://www.饭太硬.cc/tv
 {
-    "spider": "https://xiuxiu-pro-new.meitudata.com/posters/776af3c4b61098b3573b4973f867010c.jpg;md5;76e9565340e6d28c363b914ca2d506ed",
+    "spider": "https://xiuxiu-pro-new.meitudata.com/posters/9970bc4b67aa7d907871548db1c31bba.jpg;md5;fa1bcd5643872834ee03be5ba2f23ac7",
     "wallpaper": "https://动态壁纸.饭.eu.org/",
     "sites": [
         {
@@ -16,7 +16,7 @@
         },
         {
             "key": "点我切源",
-            "name": "豆豆┃片单 <Fix Everything>",
+            "name": "豆豆┃片单 <升级弹幕>",
             "type": 3,
             "api": "csp_DouDouGuard",
             "indexs": 1,
@@ -148,17 +148,6 @@
             "changeable": 1
         },
         {
-            "key": "海绵",
-            "name": "🐬海绵┃不卡",
-            "type": 3,
-            "api": "csp_HmysGuard",
-            "timeout": 10,
-            "playerType": "2",
-            "searchable": 1,
-            "quickSearch": 1,
-            "changeable": 1
-        },
-        {
             "key": "立播",
             "name": "🌟立播┃不卡",
             "type": 3,
@@ -188,6 +177,17 @@
             "type": 3,
             "api": "csp_BttwooGuard",
             "timeout": 10,
+            "searchable": 1,
+            "quickSearch": 1,
+            "changeable": 1
+        },
+        {
+            "key": "海绵",
+            "name": "🐬海绵┃不卡",
+            "type": 3,
+            "api": "csp_HmysGuard",
+            "timeout": 10,
+            "playerType": "2",
             "searchable": 1,
             "quickSearch": 1,
             "changeable": 1
