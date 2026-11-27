@@ -1,9 +1,9 @@
-//      >>> 自动更新于：2026-11-27 21:27:29 <<<
+//      >>> 自动更新于：2026-11-28 07:53:17 <<<
 //     由 GitHub Actions 定时解密生成，请勿手动修改本文件
 
 //     当前接口：http://www.饭太硬.cc/tv
 {
-    "spider": "https://xiuxiu-pro-new.meitudata.com/posters/1596492e4fd351653dd1eb788606fd1f.jpg;md5;d68f9550bcb16a55f4715c2ec6528c1e",
+    "spider": "https://xiuxiu-pro-new.meitudata.com/posters/b8dd1a2814d9e09181f679d3ef09eb6e.jpg;md5;fa149671d3bfb3a718b98c77f47cef45",
     "wallpaper": "https://动态壁纸.饭.eu.org/",
     "sites": [
         {
@@ -16,7 +16,7 @@
         },
         {
             "key": "点我切源",
-            "name": "片单┃ <Fix所有>",
+            "name": "片单┃ <修复夸父扫码>",
             "type": 3,
             "api": "csp_DouDouGuard",
             "indexs": 1,
